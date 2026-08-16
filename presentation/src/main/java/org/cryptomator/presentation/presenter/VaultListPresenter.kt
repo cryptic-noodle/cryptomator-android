@@ -107,13 +107,6 @@ class VaultListPresenter @Inject constructor( //
 			return
 		}
 
-		if (FlavorConfig.isFreemiumFlavor) {
-			val alreadyKnownExpired = sharedPreferencesHandler.isTrialExpired()
-			val trialState = licenseEnforcer.evaluateTrialState()
-			if (!alreadyKnownExpired && trialState.isExpired && !licenseEnforcer.hasPaidLicense()) {
-				view?.showDialog(TrialExpiredDialog.newInstance())
-			}
-		}
 	}
 
 	private fun launchWelcomeFlowIfNeeded(): Boolean {
