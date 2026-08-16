@@ -19,4 +19,4 @@ jobs:
         with:
           java-version: 17
       - name: Build and Test
-        run: bash ./gradlew clean test --stacktrace
+        run: bash ./gradlew build
